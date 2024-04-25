@@ -23,3 +23,17 @@ body {
     width: 100%;
     height: 300px;
 }
+
+@keyframes jump {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  .animated {
+    animation: jump 1s ease infinite;
+  }  
+  
