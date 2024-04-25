@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'Poppins-SemiBold';
+    src: url('font/Poppins-SemiBold.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Poppins-SemiBold';
+    background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+}
+
+.notebook-preview {
+    position: relative;
+}
+
+.btn-view-notebook {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.notebook-preview iframe {
+    width: 100%;
+    height: 300px;
+}
