@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const apiUrl = "https://api.github.com/repos/haynako0/ipynb_site/contents/ipynb";
+    // Hello for those who want to make their own! You need to change the API accordingly for this to work. - Erl Softer
+    // https://api.github.com/repos/(GitHub Username)/(Repository)/contents/(Folder Name)
 
     async function fetchNotebooks() {
         try {
@@ -30,7 +32,9 @@ document.addEventListener("DOMContentLoaded", function() {
                     previewContainer.appendChild(row);
                 }
 
-                const notebookUrl = `https://github.com/haynako0/ipynb_site/blob/master/ipynb/${notebook.name}`;
+                // Hello for those who want to make their own! You need to change these links accordingly to your own links for this to work. - Erl Softer
+                // Just changer "haynako0", "ipynb_site" and "ipynb" accordingly.
+                const notebookUrl = `https://nbviewer.jupyter.org/github/haynako0/ipynb_site/blob/master/ipynb/${notebook.name}`;
                 const repoUrl = `https://github.com/haynako0/ipynb_site/blob/master/ipynb/${notebook.name}`;
                 const colabUrl = `https://colab.research.google.com/github/haynako0/ipynb_site/blob/master/ipynb/${notebook.name}`;
 
@@ -42,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 notebookPreview.appendChild(notebookTitle);
 
                 const notebookIframe = document.createElement("iframe");
-                notebookIframe.src = `https://github.com/haynako0/ipynb_site/blob/master/ipynb/${notebook.name}`;
+                notebookIframe.src = notebookUrl;
                 notebookIframe.title = "IPython Notebook Preview";
                 notebookIframe.allowFullscreen = true;
                 notebookIframe.style.height = "300px";
@@ -55,6 +59,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 repoButton.classList.add("btn", "btn-primary", "mt-2", "me-2");
                 repoButton.target = "_blank";
                 notebookPreview.appendChild(repoButton);
+
+                const nbviewerButton = document.createElement("a");
+                nbviewerButton.href = notebookUrl;
+                nbviewerButton.textContent = "View in nbviewer";
+                nbviewerButton.classList.add("btn", "btn-success", "mt-2", "me-2");
+                nbviewerButton.target = "_blank";
+                notebookPreview.appendChild(nbviewerButton);
 
                 const colabButton = document.createElement("a");
                 colabButton.href = colabUrl;
