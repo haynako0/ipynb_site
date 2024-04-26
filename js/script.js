@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const notebooks = await fetchNotebooks();
 
         if (notebooks.length === 0) {
-            previewContainer.innerHTML = "<p>No notebooks found.</p>";
+            previewContainer.innerHTML = "<h2>No notebooks found.</h2>";
             return;
         }
 
