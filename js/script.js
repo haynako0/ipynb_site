@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
 
                 // Hello for those who want to make their own! You need to change these links accordingly to your own links for this to work. - Erl Softer
-                // Just changer "haynako0", "ipynb_site" and "ipynb" accordingly.
+                // Just change "haynako0", "ipynb_site", "main" and "ipynb" accordingly.
                 const notebookUrl = `https://nbviewer.jupyter.org/github/haynako0/ipynb_site/blob/main/ipynb/${notebook.name}`;
                 const repoUrl = `https://github.com/haynako0/ipynb_site/blob/main/ipynb/${notebook.name}`;
                 const colabUrl = `https://colab.research.google.com/github/haynako0/ipynb_site/blob/main/ipynb/${notebook.name}`;
@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 notebookIframe.allowFullscreen = true;
                 notebookIframe.style.height = "300px";
                 notebookIframe.style.width = "100%";
+                notebookIframe.setAttribute("sandbox", "allow-same-origin allow-scripts");
                 notebookPreview.appendChild(notebookIframe);
 
                 const repoButton = document.createElement("a");
@@ -77,6 +78,24 @@ document.addEventListener("DOMContentLoaded", function() {
                 const currentRow = previewContainer.lastElementChild;
                 currentRow.appendChild(notebookPreview);
             }
+        });
+
+        const iframes = document.querySelectorAll("iframe");
+        let loadedCount = 0;
+        iframes.forEach(iframe => {
+            iframe.addEventListener("load", () => {
+                loadedCount++;
+                if (loadedCount === iframes.length) {
+                    const loadingOverlay = document.getElementById("loading-overlay");
+                    loadingOverlay.style.transition = "opacity 0.5s ease";
+                    loadingOverlay.style.opacity = "0";
+
+                    setTimeout(() => {
+                        loadingOverlay.style.display = "none";
+                        document.getElementById("content").style.display = "block";
+                    }, 500);
+                }
+            });
         });
     }
 
