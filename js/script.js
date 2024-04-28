@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 const notebookIframe = document.createElement("iframe");
                 notebookIframe.src = notebookUrl;
-                notebookIframe.title = "IPython Notebook Preview";
+                notebookIframe.title = "Jupyter Notebook Preview";
                 notebookIframe.allowFullscreen = true;
                 notebookIframe.style.height = "300px";
                 notebookIframe.style.width = "100%";
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 const repoButton = document.createElement("a");
                 repoButton.href = repoUrl;
-                repoButton.textContent = "View in Repository";
+                repoButton.textContent = "View in Github";
                 repoButton.classList.add("btn", "btn-primary", "mt-2", "me-2");
                 repoButton.target = "_blank";
                 notebookPreview.appendChild(repoButton);
@@ -79,24 +79,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 currentRow.appendChild(notebookPreview);
             }
         });
-
-        const iframes = document.querySelectorAll("iframe");
-        let loadedCount = 0;
-        iframes.forEach(iframe => {
-            iframe.addEventListener("load", () => {
-                loadedCount++;
-                if (loadedCount === iframes.length) {
-                    const loadingOverlay = document.getElementById("loading-overlay");
-                    loadingOverlay.style.transition = "opacity 0.5s ease";
-                    loadingOverlay.style.opacity = "0";
-
-                    setTimeout(() => {
-                        loadingOverlay.style.display = "none";
-                        document.getElementById("content").style.display = "block";
-                    }, 500);
-                }
-            });
-        });
+        
     }
 
     renderNotebookPreviews();

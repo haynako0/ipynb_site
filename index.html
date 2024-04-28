@@ -1,23 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erl Sofer's .ipynb Repository</title>
-    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-    <div class="loading-overlay" id="loading-overlay">
-        <img src="assets/Magnify@1.5x-1.8s-200px-200px.png" alt="Loading...">
-        <p>Loading...</p>
-    </div>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <div class="container text-center">
-        <h1>Erl Sofer's Automated .ipynb Repository Website</h1>
-        <p class="animated">Disclaimer: nbviewer's Error 404 may be a cache issue on their end. Viewing in GitHub and Google Colab should have no issues.</p>
-        <div id="preview-container" class="row mt-5"></div>
+  <title>Erl Sofer's Automated .ipynb Repository Website</title>
+
+  <link href="img/Pela_Sticker_01.webp" rel="icon">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <link href="bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <header id="header" class="fixed-top ">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-xl-9 d-flex align-items-center justify-content-lg-between">
+          <h1 class="logo me-auto me-lg-0"><a href="index.html">Erl's Notebooks</a></h1>
+          <nav id="navbar" class="navbar order-last order-lg-0">
+            <ul>
+              <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+              <li><a class="nav-link scrollto" href="#about">About</a></li>
+              <li><a class="nav-link scrollto" href="#notebooks">Notebooks</a></li>
+              <li><a class="nav-link scrollto" href="#faq">FAQ</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+          </nav>
+        </div>
+      </div>
     </div>
-    <script src="js/script.js"></script>
+  </header>
+
+  <section id="hero" class="d-flex flex-column justify-content-center">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-8">
+          <h1>Erl Sofer's Automated .ipynb Repository Website</h1>
+          <h2>Made in compliance to CSEL-302: Introduction to Intelligent Systems</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main id="main">
+    <section id="about" class="about">
+      <div class="container">
+        <div class="section-title">
+          <h2>About Us</h2>
+          <p>A dedicated section regarding the developer of the site.</p>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-12">
+            <p>
+              Hello, I'm Erl Teodemar D. Sofer, currently a second-year Computer Science student at Laguna State Polytechnic University, belonging to Section BSCS-2A.
+            </p>
+            <ul>
+              <li><i class="ri-check-double-line"></i>This is a website where my Jupyter notebooks are automatically showcased for convenience.</li>
+              <li><i class="ri-check-double-line"></i>This website was made in accordance to CSEL-302: Introduction to Intelligent Systems.</li>
+              <li><i class="ri-question-line"></i>You can find more information on the FAQ section.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="notebooks" class="notebooks">
+      <div class="container">
+        <div class="section-title">
+          <h2>Notebooks</h2>
+          <p>Notebooks are automatically fetched from <a href="https://github.com/haynako0/ipynb_site/tree/main/ipynb" target="_blank" style="text-decoration: underline;">my repository</a> and displayed here for easy access.</p>
+        </div>
+
+        <div id="preview-container" class="row notebook-container"></div>
+      </div>
+    </section>
+
+    <section id="faq" class="faq">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
+            <div class="content">
+              <h3>Frequently Asked <strong>Questions</strong></h3>
+              <p>
+                Find out how the website works here.
+              </p>
+            </div>
+
+            <div class="accordion-list">
+              <ul>
+                <li>
+                  <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1">What powers the automation behind fetching and displaying the notebooks?<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
+                    <p>
+                      The automation is driven by JavaScript code that seamlessly integrates with the GitHub API. This enables efficient retrieval and display of notebook data from my repository and folder, enhancing user experience on the website.
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed">What is nbviewer and why is it utilized in this project? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
+                    <p>
+                      Nbviewer is a web service used to share and view Jupyter notebooks online without needing to execute them locally. In this project, nbviewer is utilized to generate interactive previews of Jupyter notebooks stored in my GitHub repository. 
+                      GitHub has limitations on directly viewing notebooks, such as unsupported rendering of certain interactive elements. 
+                      By leveraging nbviewer, users can conveniently access and view the notebooks directly in their web browsers, 
+                      overcoming these limitations and enhancing accessibility and collaboration.
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed">Why did you choose to automate the generation of notebook previews instead of manually laying out each one? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
+                    <p>
+                      I opted for automation as a personal challenge and to enhance efficiency. 
+                      Automating the process not only saves time and effort but also allows for consistency in presentation across all notebooks. 
+                      Additionally, it enables real-time updates and synchronization with changes in my GitHub repository, ensuring that the previews are always up-to-date. 
+                      By challenging myself to automate this task, I aimed to streamline the management and presentation of notebook content on this website while honing my skills in web development.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>         
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <div class="container">
+      <h3>Appreciate my work? Send some here.</h3>
+      <img src="img/gcash.png" class="img-fluid w-50 h-auto m-3">
+      <p>Thank you so much in advance!</p>
+      <div class="credits">
+      </div>
+    </div>
+  </footer>
+
+  <div id="preloader"></div>
+
+  <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="vendor/swiper/swiper-bundle.min.js"></script>
+
+  <script src="js/main.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
