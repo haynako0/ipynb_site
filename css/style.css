@@ -854,7 +854,7 @@ section {
   height: 300px;
 }
 
-.links .icon-box {
+.link .icon-box {
   padding: 60px 30px;
   transition: all ease-in-out 0.3s;
   background: #fefefe;
@@ -863,7 +863,7 @@ section {
   border-bottom: 5px solid #fff;
 }
 
-.links .icon-box .icon {
+.link .icon-box .icon {
   width: 64px;
   height: 64px;
   background: #006699;
@@ -876,32 +876,32 @@ section {
   color: #fff;
 }
 
-.links .icon-box .icon i {
+.link .icon-box .icon i {
   font-size: 28px;
 }
 
-.links .icon-box h4 {
+.link .icon-box h4 {
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 24px;
 }
 
-.links .icon-box h4 a {
+.link .icon-box h4 a {
   color: #282828;
   transition: ease-in-out 0.3s;
 }
 
-.links .icon-box p {
+.link .icon-box p {
   line-height: 24px;
   font-size: 14px;
   margin-bottom: 0;
 }
 
-.links .icon-box:hover {
+.link .icon-box:hover {
   transform: translateY(-10px);
   border-color: #006699;
 }
 
-.links .icon-box:hover h4 a {
+.link .icon-box:hover h4 a {
   color: #006699;
 }
